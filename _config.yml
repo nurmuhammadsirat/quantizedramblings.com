@@ -1,0 +1,49 @@
+# Site Info
+title:              "Quantized Ramblings"
+description:        "A Blog of Nur Muhammad Bin Sirat"
+google_verify:      "" # Put your Google Verification here
+google_analytics:   "" # Put your Google Analytics code
+
+# Author Info
+author_name:        "Nur Muhammad Bin Sirat" # Your name here
+author_email:       mat.ace@gmail.com # Your email here
+author_gravatar:    "280e4016d89072cc704ec068597c0f15" # Your Gravatar md5 hash here for logo
+twitter_username:   geekmat # Your Twitter username here
+github_username:    umartyya # Your GitHub username here
+
+# Site Settings
+baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
+permalink:          /p/:title # Post permalink
+timezone:           Asia/Singapore # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+mathjax:            true  # enables support for mathjax - set to false to disable
+
+# Site Build
+highlighter:        rouge
+markdown:           kramdown
+kramdown:
+    input:          GFM
+sass:
+    style:          :compressed
+
+# Other Params
+include:            [ "robots.txt" ]
+exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "Gemfile.lock", "Rakefile" ]
+gems:
+  - jekyll-sitemap
+
+defaults:
+  -
+    scope:
+      path:         ""
+    values:
+      layout:       "null"
+  -
+    scope:
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      type:         "posts"
+    values:
+      layout:       "post"
