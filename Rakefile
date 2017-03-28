@@ -31,7 +31,7 @@ task :new, [:title] do |t, args|
   File.open(draft_file, 'w') do |fh|
     fh << "---\n"
     fh << "title: #{title}\n"
-    fh << "asset_path: /#{asset_path}"
+    fh << "asset_path: /#{asset_path}\n"
     fh << "updated: #{timestamp}\n"
     fh << "---\n"
     fh << "\n"
@@ -53,7 +53,7 @@ task :new_post, [:title] do |t, args|
   File.open(post_file, 'w') do |fh|
     fh << "---\n"
     fh << "title: #{title}\n"
-    fh << "asset_path: /#{asset_path}"
+    fh << "asset_path: /#{asset_path}\n"
     fh << "updated: #{datetimestamp}\n"
     fh << "---\n"
     fh << "\n"

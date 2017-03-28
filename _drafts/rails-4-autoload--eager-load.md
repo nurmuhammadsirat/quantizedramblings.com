@@ -1,6 +1,7 @@
 ---
 title: Rails 4: autoload & eager load
-asset_path: /assets/rails-4-autoload--eager-loadupdated: 2017-03-28 12:58
+asset_path: /assets/rails-4-autoload--eager-load
+updated: 2017-03-28 12:58
 ---
 
 In development and test environment config files, you'll notice that `config.eager_load` is set to false, but true in production. `config.autoload_paths` is not explicitly set, so I guess it will be to whatever Rails has set to default. I never really gave these a second thought, until I ran into some problems with it.

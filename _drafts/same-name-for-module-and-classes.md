@@ -1,6 +1,7 @@
 ---
 title: Same name for Module and Classes
-asset_path: /assets/same-name-for-module-and-classesupdated: 2017-03-28 12:59
+asset_path: /assets/same-name-for-module-and-classes
+updated: 2017-03-28 12:59
 ---
 
 Yes, it is possible. However, you can't define both a class and a module by the same name. Observe:
