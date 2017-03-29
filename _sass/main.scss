@@ -122,7 +122,10 @@ blockquote {
   margin: 0 auto;
   .title {
     line-height: 1.4em;
-    text-align: center;
+  }
+  .subtitle {
+    margin-top: 0px;
+    line-height: 0.8em;
   }
   .divider {
     background: #ddd;
