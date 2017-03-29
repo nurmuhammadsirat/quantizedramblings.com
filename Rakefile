@@ -69,9 +69,12 @@ task :convert, [:title] do |t, args|
   draft_file = "#{normalize_title_to_file_name(title)}.md"
   quit "Unable to find a draft with that title: #{title}" unless File.exists?("_drafts/#{draft_file}")
 
-  datestamp = Time.now.strftime('%Y-%m-%d')
+  datetimestamp = Time.now.strftime('%Y-%m-%d %H:%M')
+  datestamp = datetimestamp.split(' ').first
+  content = File.read("_drafts/#{draft_file}")
+  content.gsub!(/^updated:.*$/, "updated: #{datetimestamp}")
   File.open("_posts/#{datestamp}-#{draft_file}", 'w') do |fh|
-    fh.write File.read("_drafts/#{draft_file}")
+    fh.write content
   end
   File.unlink "_drafts/#{draft_file}"
 end
