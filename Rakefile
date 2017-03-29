@@ -75,3 +75,14 @@ task :convert, [:title] do |t, args|
   end
   File.unlink "_drafts/#{draft_file}"
 end
+
+desc "Deploys site to remote"
+task :deploy do
+  puts "Building site..."
+  puts `bundle install --quiet && bundle exec jekyll build`
+  quit "An error occurred when building site!" if $?.to_i != 0
+
+  puts "\nDeploying site to quantizedramblings.com..."
+  puts `scp -r _site/* vps:quantizedramblings.com/`
+  quit "An error occurred when deploying site!" if $?.to_i != 0
+end
