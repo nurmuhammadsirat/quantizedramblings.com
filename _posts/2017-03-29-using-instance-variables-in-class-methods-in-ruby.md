@@ -1,7 +1,7 @@
 ---
 title: Using instance variables in class methods in Ruby
 asset_path: /assets/using-instance-variables-in-class-methods-in-ruby
-updated: 2017-03-28 12:58
+updated: 2017-03-29 23:48
 ---
 
 I was looking at some legacy Ruby code today and saw that there was a bunch of instance variables being created inside a class method. In fact, the whole class is littered with `def self.foo` declarations; nothing except class methods. There was an even funky statement at the top of the class.
@@ -80,4 +80,4 @@ b.class.bar
 
 Interesting! Since Foo is an instance of Class, the instance variable @bar lives on that instance. Any sub-instances we create from Foo and then subsequently attempt to access @bar will look at the same reference.
 
-So what is the moral of the story? It should be OK to use instance variables in class methods, but hope to God that the class is will not be instantiated. Or else information could be leaked and shared across instances, potentially leading to some subtle bug somewhere.
+So the moral of the story: while it is fine to use instance variables in class methods, you probably shouldn't.
