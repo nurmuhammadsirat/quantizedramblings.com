@@ -291,6 +291,20 @@ article {
   max-width: 500px;
   margin: 0 auto;
   font-size: 0.8rem;
+  .left {
+    display: inline-block;
+    width: 48%;
+    text-align: right;
+  }
+  .right {
+    display: inline-block;
+    width: 48%;
+    text-align: left;
+  }
+  .center {
+    display: inline-block;
+    width: 4%;
+  }
 }
 .page-navigation {
   margin: 50px auto 0 auto;
