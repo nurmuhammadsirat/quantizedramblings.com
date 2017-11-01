@@ -58,7 +58,7 @@ task :new_post, [:title] do |t, args|
     fh << "---\n"
     fh << "\n"
   end
-  puts "Created draft: #{post_file}"
+  puts "Created post: #{post_file}"
 end
 
 desc "Converts a draft to a post"
@@ -71,10 +71,13 @@ task :convert, [:title] do |t, args|
 
   datetimestamp = Time.now.strftime('%Y-%m-%d %H:%M')
   datestamp = datetimestamp.split(' ').first
+  post_file = "_posts/#{datestamp}-#{draft_file}"
   content = File.read("_drafts/#{draft_file}")
   content.gsub!(/^updated:.*$/, "updated: #{datetimestamp}")
-  File.open("_posts/#{datestamp}-#{draft_file}", 'w') do |fh|
+  File.open(post_file, 'w') do |fh|
     fh.write content
   end
   File.unlink "_drafts/#{draft_file}"
+  puts "Deleted draft: #{draft_file}"
+  puts "Created post: #{post_file}"
 end
