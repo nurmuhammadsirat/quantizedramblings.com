@@ -69,7 +69,8 @@ location / {
 
 Now, my config file looks like this:
 
-````upstream app_server {
+````
+upstream app_server {
   server unix:///var/www/my-rails-app/tmp/sockets/my-rails-app.sock;
 }
 
@@ -133,7 +134,8 @@ Turns out, Nginx has a custom built-in method to handle that. We simply do a [re
 
 So now, my config file would look like this:
 
-````upstream app_server {
+````
+upstream app_server {
   server unix:///var/www/my-rails-app/tmp/sockets/my-rails-app.sock;
 }
 
@@ -178,6 +180,7 @@ server {
 
 And if I try to send a request, the connection is immediately discarded.
 
-````curl http://my-rails-app.com/
+````
+curl http://my-rails-app.com/
 curl: (52) Empty reply from server
 ````
