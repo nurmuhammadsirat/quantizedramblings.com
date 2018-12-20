@@ -21,11 +21,11 @@ Needless to say, I was intrigued. Who would write Ruby code this way? What was t
 
 ```Ruby
 class Foo
-  def bar=(val)
+  def self.bar=(val)
     @bar = val
   end
 
-  def bar
+  def self.bar
     @bar
   end
 end
